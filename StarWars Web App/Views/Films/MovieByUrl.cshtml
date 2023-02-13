@@ -1,0 +1,99 @@
+﻿@model StarWars_Web_App.Models.FilmModel
+
+@{
+    ViewData["Title"] = "FilmByUrl";
+}
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class="container bootdey flex-grow-1 container-p-y">
+
+    <div class="media align-items-center py-3 mb-3">
+        <div class="media-body ml-4">
+            <h2 class="font-weight-bold mb-0">Name: <span class="text-muted font-weight-normal">@Model.title</span></h2>
+            <h4>Produced by:@Model.producer || Directed by:@Model.director</h4>
+            <h6>Relesed date:@Model.release_date</h6>
+            <p>@Model.opening_crawl</p>
+
+        </div>
+    </div>
+
+    <h4>Characters in the movie</h4>
+    <div class="card mb-auto">
+        <div class="card-body">
+            <table class="table user-view-table m-0">
+                <tbody>
+                    <tr>
+                        @foreach (var p in Model.persons)
+                        {
+                            <td>@p.name</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <h4>Planetes in the movie</h4>
+    <div class="card mb-4">
+        <div class="card-body">
+            <table class="table user-view-table m-0">
+                <tbody>
+                    <tr>
+                        @foreach (var p in Model.worlds)
+                        {
+                            <td>@p.name</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h4>Species in the movie</h4>
+    <div class="card mb-4">
+        <div class="card-body">
+            <table class="table user-view-table m-0">
+                <tbody>
+                    <tr>
+                        @foreach (var p in Model.Species)
+                        {
+                            <td>@p.name</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h4>Starships in the movie</h4>
+    <div class="card mb-4">
+        <div class="card-body">
+            <table class="table user-view-table m-0">
+                <tbody>
+                    <tr>
+                        @foreach (var p in Model.starShips)
+                        {
+                            <td>@p.name</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h4>Vehicels in the movie</h4>
+    <div class="card mb-4">
+        <div class="card-body">
+            <table class="table user-view-table m-0">
+                <tbody>
+                    <tr>
+                        @foreach (var p in Model.vehicelsModels)
+                        {
+                            <td>@p.name</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

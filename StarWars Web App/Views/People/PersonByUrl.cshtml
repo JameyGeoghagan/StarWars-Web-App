@@ -1,0 +1,81 @@
+﻿@model StarWars_Web_App.Models.PersonModel.Root
+
+@{
+    ViewData["Title"] = "PersonByUrl";
+}
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class="container bootdey flex-grow-1 container-p-y">
+
+    <div class="media align-items-center py-3 mb-3">
+        <div class="media-body ml-4">
+            <h2 class="font-weight-bold mb-0">Name: <span class="text-muted font-weight-normal">@Model.name</span></h2>
+            
+                @foreach(var sp in Model.Species)
+                {
+                    <h4>@sp.name</h4>
+                }
+            
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <table class="table user-view-table m-0">
+                <tbody>
+                    <tr>
+                        <td>Born:</td>
+                        <td>@Model.birth_year</td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td>@Model.gender</td>
+                    </tr>
+                    <tr>
+                        <td>Eye Color</td>
+                        <td><span class="text-primary"></span>&nbsp; @Model.eye_color</td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td>@Model.height</td>
+                    </tr>
+                    <tr>
+                        <td>Hair Color</td>
+                        <td>@Model.hair_color</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td>@Model.mass</td>
+                    </tr>
+                    <tr>
+                        <td>Movies</td>
+                        @foreach(var movie in Model.Film)
+                        {
+                            <td>@movie.title</td>
+                        }
+                    </tr>
+                    <tr>
+                        <td>Homeworld</td>
+                        <td>@Model.HomeWorld.name</td>
+                    </tr>
+                    <tr>
+                        <td>Vehicles</td>
+                        @foreach(var Vehicle in Model.Vehicels)
+                        {
+                            <td>@Vehicle.name</td>
+                        }
+                    </tr>
+                    <tr>
+                        <td>Starships</td>
+                        @foreach(var ship in Model.Starships)
+                        {
+                            <td>@ship.name</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+</div>
